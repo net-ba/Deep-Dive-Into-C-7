@@ -1,0 +1,15 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/examples/JakubSturc.CSharp7DeepDive.Examples.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}
