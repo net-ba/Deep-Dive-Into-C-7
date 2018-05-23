@@ -3,7 +3,7 @@
 namespace JakubSturc.CSharp7DeepDive.Examples.OutParameters
 {
     [TestClass]
-    public class OutExample
+    public class OutVariablesExample
     {
         public bool Convert(string str, out int i)
         {
