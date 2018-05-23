@@ -39,3 +39,18 @@ public void Using_out_CSharp7_with_var()
     Assert.AreEqual(0, i);
 }
 ```
+
+---
+
+### Using discard parameter
+
+```csharp
+public void Using_out_CSharp7_ingnoring_out()
+{            
+    var res1 = Convert("abc", out _);
+    var res2 = Convert("42", out _);            
+
+    Assert.IsFalse(res1);
+    Assert.IsTrue(res2);            
+}
+```
