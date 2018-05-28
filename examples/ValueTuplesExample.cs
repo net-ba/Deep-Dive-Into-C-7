@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace JakubSturc.CSharp7DeepDive.Examples
 {
@@ -32,17 +33,6 @@ namespace JakubSturc.CSharp7DeepDive.Examples
                 var person = GetPerson();                
                 Console.Write($"Name:{person.Item1}; Age:{person.Item2}");
             }
-
-            public void Conversion()
-            {
-                // covariace
-                (int, int) ints = (0, 42);
-                (double, double) doubles = ints;
-                
-                // names are only compile time hints
-                var feroWithAge = (name: "Fero", age: 42);
-                (string name, int heigh) feroWithHeight = feroWithAge;
-            }
         }
 
         public class NamedValueTupleExample
@@ -58,6 +48,34 @@ namespace JakubSturc.CSharp7DeepDive.Examples
                 person.age += 42;
                 Console.Write($"Name:{person.name}; Age:{person.age}");
             }
+        }
+    }
+
+    [TestClass]
+    public class ValutTupleTests
+    {
+        [TestMethod]
+        public void Tuples_Are_Mutable()
+        {
+            var fero = (name: "Fero", age: 42);
+            fero.age++;
+            Assert.AreEqual(43, fero.age);
+        }
+
+        [TestMethod]
+        public void Tuples_Are_Equalable()
+        {
+            var fero = (name: "Fero", age: 42);
+            var nero = (abc: "Fero", size: 42);
+            Assert.IsTrue(fero.Equals(nero));
+        }
+
+        [TestMethod]
+        public void Tuples_Are_Comparable()
+        {
+            var fero = (name: "Fero", age: 42);
+            var nero = (name: "Fero", age: 43);
+            Assert.IsTrue(0 > fero.CompareTo(nero));
         }
     }
 }
