@@ -12,10 +12,10 @@ Test that a value has a certain "shape" and extract information when it does.
 
 ### Supported patterns
 
-    - Type pattern
-	- Constant pattern	
-	- null pattern
-	- var pattern
+- Type pattern
+- Constant pattern	
+- null pattern
+- var pattern
 
 ---
 
